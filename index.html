@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة تشاركي - إعادة تصميم</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#A0190A',
+                            redDark: '#801408',
+                            dark: '#374151',
+                            gray: '#6B7280',
+                            light: '#F9FAFB',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-brand-light text-brand-dark">
+
+<nav class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-[1260px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+            <a href="https://tasharuky.com" class="flex items-center">
+                <img 
+                    src="https://tasharuky.com/images/346777.png" 
+                    alt="تشاركي"
+                    class="w-[190px] object-contain"
+                >
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-8">
+
+                <a href="https://tasharuky.com"
+                   class="text-brand-dark font-semibold hover:text-brand-red transition-colors">
+                    الرئيسية
+                </a>
+
+                <a href="https://tasharuky.com/view"
+                   class="text-brand-gray hover:text-brand-red transition-colors font-medium">
+                    حملاتنا
+                </a>
+
+                <a href="https://tasharuky.com/category"
+                   class="text-brand-gray hover:text-brand-red transition-colors font-medium">
+                    قطاعات المشاريع
+                </a>
+
+                <a href="https://tasharuky.com/about-us"
+                   class="text-brand-gray hover:text-brand-red transition-colors font-medium">
+                    عن تشاركي
+                </a>
+
+                <a href="https://tasharuky.com/use-guide"
+                   class="text-brand-gray hover:text-brand-red transition-colors font-medium">
+                    كيف تعمل تشاركي؟
+                </a>
+
+                <a href="https://tasharuky.com/blog"
+                   class="text-brand-gray hover:text-brand-red transition-colors font-medium">
+                    المدونة
+                </a>
+
+                <a href="https://tasharuky.com/contact-us"
+                   class="text-brand-gray hover:text-brand-red transition-colors font-medium">
+                    تواصل معنا
+                </a>
+
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+
+                <!-- Language -->
+                <button
+                    class="hidden md:flex items-center gap-2 border border-gray-200 hover:border-brand-red px-4 py-2 rounded-xl text-sm font-semibold text-brand-dark transition-all">
+                    <img 
+                        src="https://tasharuky.com/images/ar-flag.png"
+                        class="w-5 h-5 rounded-full"
+                        alt="AR"
+                    >
+                    العربية
+                </button>
+
+                <!-- Login -->
+                <a href="https://tasharuky.com/login"
+                   class="hidden md:flex text-brand-dark hover:text-brand-red font-semibold transition-colors">
+                    تسجيل الدخول
+                </a>
+
+                <!-- CTA -->
+                <a href="https://tasharuky.com/view"
+                   class="bg-brand-red hover:bg-brand-redDark text-white px-6 py-3 rounded-xl font-bold transition-all shadow-md hover:shadow-xl">
+                    ادعم الآن
+                </a>
+
+                <!-- Mobile Menu -->
+                <button
+                    class="lg:hidden w-11 h-11 rounded-xl border border-gray-200 flex items-center justify-center text-brand-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="w-6 h-6"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<section class="relative bg-white py-16 lg:py-24 overflow-hidden">
+
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-red-50 rounded-full blur-3xl opacity-40"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gray-100 rounded-full blur-3xl opacity-60"></div>
+    </div>
+
+    <div class="max-w-[1260px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <div data-aos="fade-left">
+
+                <div class="inline-flex items-center gap-2 bg-red-50 border border-red-100 text-brand-red px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    منصة تشاركي للتمويل الجماعي
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark leading-[1.2] mb-6">
+                    نبني أواصر الثقة
+                    <span class="text-brand-red block mt-2">
+                        بين الممولين وأصحاب المشاريع
+                    </span>
+                </h1>
+
+                <p class="text-lg text-brand-gray leading-relaxed max-w-2xl mb-10">
+                    منصة رقمية متخصصة في التمويل الجماعي صُممت لتكون بيئة آمنة 
+                    تجمع أصحاب المشاريع الإنسانية والممولين من حول العالم، 
+                    باستخدام أحدث تقنيات التكنولوجيا المالية لدعم الاستدامة والشفافية.
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+
+                    <a href="https://tasharuky.com/view"
+                       class="bg-brand-red text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-brand-redDark transition-all duration-300 shadow-lg hover:-translate-y-1">
+                        اكتشف المشاريع
+                    </a>
+
+                    <a href="https://tasharuky.com/use-guide"
+                       class="border border-gray-200 bg-white text-brand-dark px-8 py-4 rounded-2xl font-bold text-lg hover:border-brand-red hover:text-brand-red transition-all duration-300">
+                        كيف تعمل تشاركي؟
+                    </a>
+
+                </div>
+
+                <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 border-t border-gray-100 pt-8">
+
+                    <div>
+                        <h3 class="text-3xl font-extrabold text-brand-dark">
+                            18
+                        </h3>
+
+                        <p class="text-sm text-brand-gray mt-1">
+                            دولة نعمل بها
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-extrabold text-brand-dark">
+                            120
+                        </h3>
+
+                        <p class="text-sm text-brand-gray mt-1">
+                            حملة إنسانية
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-extrabold text-brand-dark">
+                            22
+                        </h3>
+
+                        <p class="text-sm text-brand-gray mt-1">
+                            مشروع ممول
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-extrabold text-brand-dark">
+                            +10K
+                        </h3>
+
+                        <p class="text-sm text-brand-gray mt-1">
+                            داعم حول العالم
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="relative" data-aos="fade-right">
+
+                <div class="absolute -top-6 -right-6 w-72 h-72 bg-brand-red/10 rounded-full blur-3xl"></div>
+
+                <div class="relative overflow-hidden rounded-[32px] shadow-2xl">
+
+                    <img src="https://tasharuky.com/images/statistics.jpg"
+                         alt="Tasharuky"
+                         class="w-full h-[600px] object-cover">
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+
+                    <div class="absolute bottom-6 left-6 right-6">
+
+                        <div class="bg-white/95 backdrop-blur-md rounded-3xl p-5 shadow-xl">
+
+                            <div class="flex items-center justify-between gap-4">
+
+                                <div class="flex items-center gap-4">
+
+                                    <div class="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             class="w-7 h-7 text-green-600"
+                                             fill="none"
+                                             viewBox="0 0 24 24"
+                                             stroke="currentColor">
+                                            <path stroke-linecap="round"
+                                                  stroke-linejoin="round"
+                                                  stroke-width="2"
+                                                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-sm text-brand-gray mb-1">
+                                            أحدث الحملات
+                                        </p>
+
+                                        <h4 class="font-bold text-brand-dark text-lg">
+                                            دعم الأسر النازحة في غزة
+                                        </h4>
+                                    </div>
+
+                                </div>
+
+                                <div class="hidden sm:block text-end">
+                                    <p class="text-sm text-brand-gray">
+                                        نسبة الإنجاز
+                                    </p>
+
+                                    <h4 class="text-xl font-extrabold text-brand-red">
+                                        %73
+                                    </h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-[1260px] mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="flex justify-between items-end mb-12" data-aos="fade-up">
+            <div>
+                <h2 class="text-3xl font-extrabold text-brand-dark mb-2">
+                    حملات 
+                    <span class="text-brand-red">تحتاج دعمكم</span>
+                </h2>
+
+                <p class="text-brand-gray italic">
+                    دعمك يبني المجتمعات ويصنع أثراً حقيقياً
+                </p>
+            </div>
+
+            <a href="https://tasharuky.com/view"
+               class="text-brand-red font-bold hover:underline hidden md:block">
+                مشاهدة جميع الحملات ←
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
+                 data-aos="fade-up"
+                 data-aos-delay="100">
+
+                <div class="relative overflow-hidden">
+
+                    <img src="https://tasharuky.com/images/Project/CoverImage-1774382261579701786.jpeg"
+                         class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                         alt="عطاء وأمان">
+
+                    <span class="absolute top-4 right-4 bg-brand-red text-white text-xs font-bold px-4 py-2 rounded-full">
+                        الأمن الغذائي
+                    </span>
+
+                </div>
+
+                <div class="p-6">
+
+                    <p class="text-sm text-brand-gray mb-2">
+                        عدة مؤسسات دولية
+                    </p>
+
+                    <h3 class="text-xl font-bold text-brand-dark mb-4 leading-relaxed">
+                        حملة "عطاء وأمان" لدعم الأسر النازحة في غزة
+                    </h3>
+
+                    <div class="flex items-center justify-between text-sm mb-5">
+
+                        <div class="flex items-center gap-2 text-brand-gray">
+                            <span>1859 متبرع</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <img src="https://flagcdn.com/ps.svg"
+                                 class="w-5 h-5 rounded-full"
+                                 alt="فلسطين">
+
+                            <span class="text-brand-gray">
+                                فلسطين
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-6">
+
+                        <div class="flex justify-between items-center mb-2">
+
+                            <span class="text-brand-dark font-bold">
+                                %73.26
+                            </span>
+
+                            <span class="text-brand-red font-bold">
+                                109,892$
+                            </span>
+
+                        </div>
+
+                        <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-brand-red h-full rounded-full"
+                                 style="width: 73.26%">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 text-center mb-6">
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                قيمة المشروع
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                150K$
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                الدعم
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                109K$
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                المتبقي
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                40K$
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a href="https://tasharuky.com/p/316"
+                       class="block w-full bg-brand-red text-white text-center py-3 rounded-2xl font-bold hover:bg-brand-redDark transition-colors">
+                        ادعم الآن
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
+                 data-aos="fade-up"
+                 data-aos-delay="200">
+
+                <div class="relative overflow-hidden">
+
+                    <img src="https://tasharuky.com/images/Project/CoverImage-1776330795518984357.jpg"
+                         class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                         alt="1000 أضحية">
+
+                    <span class="absolute top-4 right-4 bg-brand-dark text-white text-xs font-bold px-4 py-2 rounded-full">
+                        حملة الأضاحي
+                    </span>
+
+                </div>
+
+                <div class="p-6">
+
+                    <p class="text-sm text-brand-gray mb-2">
+                        عدة مؤسسات دولية
+                    </p>
+
+                    <h3 class="text-xl font-bold text-brand-dark mb-4 leading-relaxed">
+                        حملة "1000 أضحية" للأسر المحتاجة
+                    </h3>
+
+                    <div class="flex items-center justify-between text-sm mb-5">
+
+                        <div class="flex items-center gap-2 text-brand-gray">
+                            <span>236 متبرع</span>
+                        </div>
+
+                        <div class="text-brand-gray">
+                            موسم عيد الأضحى
+                        </div>
+
+                    </div>
+
+                    <div class="mb-6">
+
+                        <div class="flex justify-between items-center mb-2">
+
+                            <span class="text-brand-dark font-bold">
+                                %16.34
+                            </span>
+
+                            <span class="text-brand-red font-bold">
+                                16,336$
+                            </span>
+
+                        </div>
+
+                        <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-brand-red h-full rounded-full"
+                                 style="width: 16.34%">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 text-center mb-6">
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                قيمة المشروع
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                100K$
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                الدعم
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                16K$
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                المتبقي
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                83K$
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a href="https://tasharuky.com/p/337"
+                       class="block w-full bg-brand-red text-white text-center py-3 rounded-2xl font-bold hover:bg-brand-redDark transition-colors">
+                        ادعم الآن
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-[28px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
+                 data-aos="fade-up"
+                 data-aos-delay="300">
+
+                <div class="relative overflow-hidden">
+
+                    <img src="https://tasharuky.com/images/Project/CoverImage-1767011848699910092.jpg"
+                         class="w-full h-60 object-cover group-hover:scale-110 transition-transform duration-700"
+                         alt="سقيا وحياة">
+
+                    <span class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-full">
+                        سقيا المياه
+                    </span>
+
+                </div>
+
+                <div class="p-6">
+
+                    <p class="text-sm text-brand-gray mb-2">
+                        مؤسسة قطرة
+                    </p>
+
+                    <h3 class="text-xl font-bold text-brand-dark mb-4 leading-relaxed">
+                        حملة "سقيا وحياة" لتأمين مياه الشرب في غزة
+                    </h3>
+
+                    <div class="flex items-center justify-between text-sm mb-5">
+
+                        <div class="flex items-center gap-2 text-brand-gray">
+                            <span>882 متبرع</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <img src="https://flagcdn.com/ps.svg"
+                                 class="w-5 h-5 rounded-full"
+                                 alt="فلسطين">
+
+                            <span class="text-brand-gray">
+                                فلسطين
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="mb-6">
+
+                        <div class="flex justify-between items-center mb-2">
+
+                            <span class="text-brand-dark font-bold">
+                                %76.17
+                            </span>
+
+                            <span class="text-brand-red font-bold">
+                                38,086$
+                            </span>
+
+                        </div>
+
+                        <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                            <div class="bg-brand-red h-full rounded-full"
+                                 style="width: 76.17%">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 text-center mb-6">
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                قيمة المشروع
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                50K$
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                الدعم
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                38K$
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs text-brand-gray mb-1">
+                                المتبقي
+                            </p>
+
+                            <p class="font-bold text-brand-dark">
+                                11K$
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a href="https://tasharuky.com/p/293"
+                       class="block w-full bg-brand-red text-white text-center py-3 rounded-2xl font-bold hover:bg-brand-redDark transition-colors">
+                        ادعم الآن
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-14 text-center md:hidden">
+            <a href="https://tasharuky.com/view"
+               class="inline-flex items-center justify-center bg-white border border-brand-red text-brand-red px-10 py-3 rounded-2xl font-bold hover:bg-brand-red hover:text-white transition-all">
+                مشاهدة جميع المشاريع
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- قسم إحصائيات الأثر -->
+<section class="py-16 bg-brand-red relative overflow-hidden">
+    <!-- خلفية زخرفية خفيفة (دوائر شفافة) -->
+    <div class="absolute top-0 left-0 w-full h-full opacity-10">
+        <div class="absolute -left-20 -top-20 w-64 h-64 rounded-full border-8 border-white"></div>
+        <div class="absolute right-10 bottom-10 w-32 h-32 rounded-full bg-white"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center" data-aos="zoom-in-up">
+            
+            <!-- إحصائية 1 -->
+            <div class="p-6">
+                <div class="text-white text-4xl lg:text-5xl font-extrabold mb-2 flex justify-center items-center gap-1">
+                    <span>+</span>
+                    <span class="counter">10</span>
+                    <span>K</span>
+                </div>
+                <p class="text-red-100 font-medium text-sm lg:text-base">متبرع ومساهم</p>
+            </div>
+
+            <!-- إحصائية 2 -->
+            <div class="p-6 border-r border-red-800/30">
+                <div class="text-white text-4xl lg:text-5xl font-extrabold mb-2 flex justify-center items-center gap-1">
+                    <span class="counter">22</span>
+                </div>
+                <p class="text-red-100 font-medium text-sm lg:text-base">مشروعاً مكتملًا</p>
+            </div>
+
+            <!-- إحصائية 3 -->
+            <div class="p-6 border-r border-red-800/30">
+                <div class="text-white text-4xl lg:text-5xl font-extrabold mb-2 flex justify-center items-center gap-1">
+                    <span class="counter">18</span>
+                </div>
+                <p class="text-red-100 font-medium text-sm lg:text-base">دولة حول العالم</p>
+            </div>
+
+            <!-- إحصائية 4 -->
+            <div class="p-6 border-r border-red-800/30">
+                <div class="text-white text-4xl lg:text-5xl font-extrabold mb-2 flex justify-center items-center gap-1">
+                    <span>$</span>
+                    <span class="counter">1.5</span>
+                    <span>M</span>
+                </div>
+                <p class="text-red-100 font-medium text-sm lg:text-base">إجمالي التبرعات</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-brand-dark mb-12">لماذا منصة <span class="text-brand-red">تشاركي؟</span></h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- ميزة 1 -->
+            <div class="p-8 rounded-3xl bg-brand-light border border-transparent hover:border-brand-red/20 transition-all" data-aos="fade-up">
+                <div class="w-14 h-14 bg-red-100 text-brand-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">شفافية كاملة</h3>
+                <p class="text-brand-gray text-sm">تقارير دورية وصور حية لكل مراحل تنفيذ المشروع الذي تبرعت له.</p>
+            </div>
+
+            <!-- ميزة 2 -->
+            <div class="p-8 rounded-3xl bg-brand-light border border-transparent hover:border-brand-red/20 transition-all" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-14 h-14 bg-red-100 text-brand-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">تأثير فوري</h3>
+                <p class="text-brand-gray text-sm">تصل تبرعاتك مباشرة للميدان بفضل شراكاتنا العالمية الواسعة.</p>
+            </div>
+
+            <!-- ميزة 3 -->
+            <div class="p-8 rounded-3xl bg-brand-light border border-transparent hover:border-brand-red/20 transition-all" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-red-100 text-brand-red rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3">أمان عالي</h3>
+                <p class="text-brand-gray text-sm">نستخدم أحدث تقنيات التشفير لضمان حماية بياناتك وعمليات الدفع.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-16 bg-brand-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold">رحلة عطائك في <span class="text-brand-red">3 خطوات</span></h2>
+        </div>
+        
+        <div class="relative">
+            <!-- الخط الواصل -->
+            <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2"></div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- خطوة 1 -->
+                <div class="relative z-10 text-center bg-brand-light px-4">
+                    <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl ring-8 ring-white">1</div>
+                    <h4 class="font-bold mb-2">اختر مشروعك</h4>
+                    <p class="text-xs text-brand-gray leading-relaxed">تصفح مئات المشاريع الإنسانية العاجلة التي تلامس قلبك.</p>
+                </div>
+
+                <!-- خطوة 2 -->
+                <div class="relative z-10 text-center bg-brand-light px-4">
+                    <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl ring-8 ring-white">2</div>
+                    <h4 class="font-bold mb-2">تبرع بسهولة</h4>
+                    <p class="text-xs text-brand-gray leading-relaxed">بضغطة زر وبطرق دفع آمنة ومتنوعة تناسبك أينما كنت.</p>
+                </div>
+
+                <!-- خطوة 3 -->
+                <div class="relative z-10 text-center bg-brand-light px-4">
+                    <div class="w-12 h-12 bg-brand-red text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl ring-8 ring-white">3</div>
+                    <h4 class="font-bold mb-2">تابع الأثر</h4>
+                    <p class="text-xs text-brand-gray leading-relaxed">استلم تقارير دورية تظهر أين ذهبت أموالك وكيف غيرت الحياة.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-brand-red relative overflow-hidden">
+
+    <div class="absolute inset-0 overflow-hidden opacity-10">
+        <div class="absolute -top-24 -left-24 w-80 h-80 border-[12px] border-white rounded-full"></div>
+        <div class="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full"></div>
+        <div class="absolute top-1/2 left-1/2 w-72 h-72 border-[10px] border-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+    </div>
+
+    <div class="max-w-[1260px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        <div class="text-center mb-14" data-aos="fade-up">
+
+            <span class="inline-flex items-center bg-white/10 border border-white/20 text-white px-5 py-2 rounded-full text-sm font-bold mb-5">
+                أرقام وإحصائيات
+            </span>
+
+            <h2 class="text-4xl lg:text-5xl font-extrabold text-white mb-4">
+                أثر ممتد حول العالم
+            </h2>
+
+            <p class="text-red-100 text-lg max-w-2xl mx-auto leading-relaxed">
+                نعمل على دعم المبادرات الإنسانية والاجتماعية عبر حلول رقمية 
+                آمنة وشفافة تُحدث أثراً حقيقياً في المجتمعات.
+            </p>
+
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
+
+            <!-- Stat 1 -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:bg-white/15 transition-all duration-300"
+                 data-aos="zoom-in"
+                 data-aos-delay="100">
+
+                <div class="text-white text-4xl lg:text-5xl font-extrabold mb-3 flex justify-center items-center gap-1">
+                    <span>+</span>
+                    <span class="counter">10620</span>
+                </div>
+
+                <p class="text-red-100 font-medium text-sm lg:text-base">
+                    داعم ومتبرع
+                </p>
+
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:bg-white/15 transition-all duration-300"
+                 data-aos="zoom-in"
+                 data-aos-delay="200">
+
+                <div class="text-white text-4xl lg:text-5xl font-extrabold mb-3">
+                    <span class="counter">120</span>
+                </div>
+
+                <p class="text-red-100 font-medium text-sm lg:text-base">
+                    حملة إنسانية
+                </p>
+
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:bg-white/15 transition-all duration-300"
+                 data-aos="zoom-in"
+                 data-aos-delay="300">
+
+                <div class="text-white text-4xl lg:text-5xl font-extrabold mb-3">
+                    <span class="counter">18</span>
+                </div>
+
+                <p class="text-red-100 font-medium text-sm lg:text-base">
+                    دولة حول العالم
+                </p>
+
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:bg-white/15 transition-all duration-300"
+                 data-aos="zoom-in"
+                 data-aos-delay="400">
+
+                <div class="text-white text-4xl lg:text-5xl font-extrabold mb-3">
+                    <span class="counter">22</span>
+                </div>
+
+                <p class="text-red-100 font-medium text-sm lg:text-base">
+                    مشروع ممول
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- قسم التبرع السريع -->
+<section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-brand-light rounded-[2rem] p-8 md:p-12 shadow-inner border border-gray-100 relative overflow-hidden" data-aos="fade-up">
+            
+            <!-- محتوى القسم -->
+            <div class="relative z-10 grid lg:grid-cols-5 gap-10 items-center">
+                
+                <!-- النص التحفيزي -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-3xl font-extrabold text-brand-dark mb-4">اجعل أثرك <span class="text-brand-red">فورياً</span></h2>
+                    <p class="text-brand-gray leading-relaxed mb-6">
+                        اختر مبلغاً للمساهمة في الصندوق العام للمنصة، حيث يتم توجيه التبرعات للمشاريع الأكثر احتياجاً الآن.
+                    </p>
+                    <div class="flex items-center gap-3 text-sm font-bold text-brand-red">
+                        <span class="flex h-3 w-3 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-red"></span>
+                        </span>
+                        148 شخص يتبرعون الآن
+                    </div>
+                </div>
+
+                <!-- نموذج الاختيار السريع -->
+                <div class="lg:col-span-3 bg-white p-6 md:p-8 rounded-3xl shadow-xl">
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <!-- مبالغ جاهزة -->
+                        <button class="border-2 border-gray-100 hover:border-brand-red hover:text-brand-red py-4 rounded-2xl font-bold transition-all focus:ring-2 focus:ring-brand-red focus:border-brand-red">$10</button>
+                        <button class="border-2 border-brand-red bg-brand-red text-white py-4 rounded-2xl font-bold shadow-lg shadow-red-100">$50</button>
+                        <button class="border-2 border-gray-100 hover:border-brand-red hover:text-brand-red py-4 rounded-2xl font-bold transition-all">$100</button>
+                    </div>
+
+                    <!-- إدخال مبلغ مخصص -->
+                    <div class="relative mb-6">
+                        <span class="absolute inset-y-0 right-4 flex items-center text-brand-gray font-bold">$</span>
+                        <input type="number" placeholder="أدخل مبلغاً آخر" class="w-full bg-gray-50 border-none ring-1 ring-gray-200 rounded-2xl py-4 pr-10 focus:ring-2 focus:ring-brand-red outline-none transition-all font-bold">
+                    </div>
+
+                    <!-- زر التنفيذ -->
+                    <button class="w-full bg-brand-red text-white py-5 rounded-2xl font-bold text-xl hover:bg-brand-redDark transition-all shadow-xl flex justify-center items-center gap-3 group">
+                        <span>تأكيد التبرع</span>
+                        <svg xmlns="http://w3.org" class="h-6 w-6 group-hover:translate-x-[-5px] transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+
+                    <!-- خيارات الدفع -->
+                    <div class="mt-6 flex justify-center items-center gap-6 opacity-40 grayscale">
+                        <img src="https://wikimedia.org" class="h-4" alt="visa">
+                        <img src="https://wikimedia.org" class="h-6" alt="mastercard">
+                        <img src="https://wikimedia.org" class="h-5" alt="paypal">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="bg-brand-dark text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            <!-- عمود 1: عن المنصة -->
+            <div class="space-y-6">
+                <span class="text-3xl font-extrabold text-white">تشاركي</span>
+                <p class="text-gray-400 leading-relaxed text-sm">
+                    منظمة غير ربحية مسجلة عالمياً، تهدف لتسخير التكنولوجيا لخدمة الإنسانية وربط المتبرعين بالمشاريع الأكثر احتياجاً حول العالم.
+                </p>
+                <!-- روابط التواصل الاجتماعي -->
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand-red transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-brand-red transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- عمود 2: روابط سريعة -->
+            <div>
+                <h4 class="text-lg font-bold mb-6">اكتشف</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-brand-red transition-colors">مشاريع غزة</a></li>
+                    <li><a href="#" class="hover:text-brand-red transition-colors">كفالة الأيتام</a></li>
+                    <li><a href="#" class="hover:text-brand-red transition-colors">صدقة جارية</a></li>
+                    <li><a href="#" class="hover:text-brand-red transition-colors">الزكاة</a></li>
+                </ul>
+            </div>
+
+            <!-- عمود 3: الدعم -->
+            <div>
+                <h4 class="text-lg font-bold mb-6">المساعدة</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-brand-red transition-colors">الأسئلة الشائعة</a></li>
+                    <li><a href="#" class="hover:text-brand-red transition-colors">سياسة الخصوصية</a></li>
+                    <li><a href="#" class="hover:text-brand-red transition-colors">اتصل بنا</a></li>
+                    <li><a href="#" class="hover:text-brand-red transition-colors">تقارير الشفافية</a></li>
+                </ul>
+            </div>
+
+            <!-- عمود 4: النشرة البريدية -->
+            <div>
+                <h4 class="text-lg font-bold mb-6">كن قريباً</h4>
+                <p class="text-gray-400 text-sm mb-4">اشترك ليصلك أثر تبرعاتك وقصص النجاح من الميدان.</p>
+                <div class="relative">
+                    <input type="email" placeholder="بريدك الإلكتروني" class="w-full bg-gray-800 border-none rounded-xl py-3 px-4 text-sm focus:ring-2 focus:ring-brand-red outline-none">
+                    <button class="absolute left-2 top-1.5 bg-brand-red text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-brand-redDark transition-all">اشتراك</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- الخط السفلي -->
+        <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+            <p>© 2024 منصة تشاركي العالمية. جميع الحقوق محفوظة.</p>
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                خوادم المنصة مؤمنة ومشفرة بالكامل
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
+    <script>
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    const startCounter = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.innerText;
+                const count = +counter.getAttribute('data-current') || 0;
+                const inc = target / speed;
+
+                if (count < target) {
+                    const nextCount = Math.ceil(count + inc);
+                    counter.setAttribute('data-current', nextCount);
+                    counter.innerText = nextCount;
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    };
+
+    window.addEventListener('scroll', function scrollHandler() {
+        const section = document.querySelector('.counter').getBoundingClientRect();
+        if (section.top < window.innerHeight) {
+            startCounter();
+            window.removeEventListener('scroll', scrollHandler);
+        }
+    });
+</script>
+
+</body>
+
+</html>
